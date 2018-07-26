@@ -1,0 +1,70 @@
+---------------------------------------------------
+create database final;
+use final;
+
+create table hotel(
+hotelID int NOT NULL,
+name varchar(50),
+rating int,
+primary key(hotelID)
+);
+
+
+create table rooms(
+roomID int NOT NULL AUTO_INCREMENT,
+hotelID int,
+type varchar(50),
+primary key(roomID)
+);
+
+
+create table reservation(
+resID int NOT NULL AUTO_INCREMENT,
+startDate date,
+endDate date,
+hotelID int,
+userID int,
+roomID int,
+primary key(resID)
+);
+
+create table users(
+userID int NOT NULL AUTO_INCREMENT,
+uname varchar(50),
+fname varchar(50),
+lname varchar(50),
+password varchar(255),
+resID int,
+primary key(userID)
+
+);
+
+
+INSERT INTO hotel(hotelID,name,rating) VALUES 
+(1,'Kilton',80),
+(2,'Harriot',88),
+(3,'NGN',95),
+(4,'Arizona Siltmore',78),
+(5,'motel7',50);
+
+INSERT INTO rooms(hotelID,type) VALUES 
+(1,'single'),
+(1,'double'),
+(1,'queen'),
+(1,'king'),
+(2,'single'),
+(2,'double'),
+(2,'queen'),
+(2,'king'),
+(3,'single'),
+(3,'double'),
+(3,'queen'),
+(3,'king'),
+(4,'single'),
+(4,'double'),
+(4,'queen'),
+(4,'king'),
+(5,'single'),    
+(5,'double'),
+(5,'queen'),
+(5,'king');
